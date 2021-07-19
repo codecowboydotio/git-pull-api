@@ -1,0 +1,35 @@
+Example git pull API for unit (works outside of unit actually).
+Pull API to retrieve git repo ready to use on the system that the API runs on.
+---
+parameters:
+  - name: repo
+    in: query
+    type: string
+    required: true
+  - name: branch
+    in: query
+    type: string
+    required: true
+  - name: dest
+    in: query
+    type: string
+    required: true
+responses:
+  500:
+    description: Something went very wrong
+  200:
+    description: Return the repo, branch and destination
+    schema:
+      properties:
+        repo:
+          type: string
+          description: The Repository
+          default: none
+        branch:
+          type: string
+          description: The Branch
+          default: none
+        dest:
+          type: string
+          description: The Destination
+          default: none
