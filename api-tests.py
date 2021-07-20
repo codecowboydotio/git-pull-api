@@ -3,9 +3,11 @@
 import requests
 
 def test_pull_api():
-  response = requests.post('http://127.0.0.1:81/pull')
+  url = 'http://127.0.0.1:81/pull'
+  myobj = {"repo":"http://github.com/codecowboydotio/fw-tester", "branch":"gober", "dest":"/root/fw-tester-fooble"}
+  response = requests.post(url, data = myobj)
   assert response.status_code == 200
-  assert response.headers["Content-Type"] == "application/json"
+  assert response.headers['Content-Type'] == 'application/json'
 
 def test_docs():
   response = requests.get('http://127.0.0.1:81/apidocs')
