@@ -27,6 +27,7 @@ def pull():
       git_repo = Repo(dest)
       origin = git_repo.remotes.origin 
       origin.pull()
+      git_repo.git.reset('--hard')
     else:
       Repo.clone_from(repo, dest)    
 
