@@ -21,9 +21,9 @@ def pull():
     repo = data['repo']
     branch = data['branch']
     dest = data['dest']
-    config_url = data['config_url']
-    key = data['key']
-    val = data['val']
+  #  config_url = data['config_url']
+  #  key = data['key']
+  #  val = data['val']
 
     path_exists = Path(dest).is_dir()
     if path_exists == True:
@@ -34,7 +34,8 @@ def pull():
     else:
       Repo.clone_from(repo, dest)    
 
-    return jsonify(repo=repo, branch=branch, dest=dest, config_url=config_url, key=key, val=val)
+    #return jsonify(repo=repo, branch=branch, dest=dest, config_url=config_url, key=key, val=val)
+    return jsonify(repo=repo, branch=branch, dest=dest)
 
 @app.route('/info', methods=['GET'])
 @swag_from('info.yml')
