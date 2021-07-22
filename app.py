@@ -18,9 +18,16 @@ def pull():
     result_data = request.get_data()
     print(result_data)
     data = request.get_json(force=True)
-    repo = data['repo']
-    branch = data['branch']
-    dest = data['dest']
+    print ("\n\n")
+    html_url = data['repository']['html_url']
+    message = data['commits'][0]['message']
+    print (html_url)
+    print (message)
+    print ("\n\n")
+    repo = data['repository']['html_url']
+    branch = 'main'
+  #  branch = data['branch']
+    dest = data['commits'][0]['message']
   #  config_url = data['config_url']
   #  key = data['key']
   #  val = data['val']
