@@ -24,10 +24,12 @@ def pull():
     print (html_url)
     print (message)
     print ("\n\n")
-    repo = data['repository']['html_url']
-    branch = 'main'
-  #  branch = data['branch']
-    dest = data['commits'][0]['message']
+  ##  repo = data['repository']['html_url']
+  ##  branch = 'main'
+  ##  dest = data['commits'][0]['message']
+    repo = data['repo']
+    branch = data['branch']
+    dest   = data['dest']
   #  config_url = data['config_url']
   #  key = data['key']
   #  val = data['val']
