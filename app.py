@@ -26,8 +26,9 @@ def pull():
     if path_exists == True:
       git_repo = Repo(dest)
       origin = git_repo.remotes.origin 
+      origin.fetch()
       origin.pull()
-      git_repo.git.reset('--hard')
+      #git_repo.git.reset('--hard')
     else:
       Repo.clone_from(repo, dest)    
 
